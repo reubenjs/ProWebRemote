@@ -37,6 +37,7 @@ var inputTyping = false;
 var stageMessageTyping = false;
 var presentationDisplayRequest = [];
 var previousPresentationRequest = false;
+var sideMenus = true;
 
 // End Variables
 
@@ -3387,6 +3388,28 @@ function openSideMenu() {
 function closeSideMenu() {
     // Decrease the width of the side menu to display it
     document.getElementById("sections").style.width = "0";
+}
+
+function toggleSideMenus() {
+    if (sideMenus) {
+        // Decrease the width of the side menu to display it
+        document.getElementById("sections").style.width = "0";
+        document.getElementById("section-1").style.width = "0"; //264px
+        document.getElementById("section-2").style.width = "0"; //284px
+        document.getElementById("presentations").style.marginLeft = "0"; //265px
+        document.getElementById("presentations").style.marginRight = "0"; //285px
+    }
+    else {
+        // Increase the width of the side menu to display it
+        document.getElementById("sections").style.width = "250px";
+        document.getElementById("section-1").style.width = "264px"; 
+        document.getElementById("section-2").style.width = "284px"; 
+        document.getElementById("presentations").style.marginLeft = "265px";
+        document.getElementById("presentations").style.marginRight = "285px";  
+    }
+
+    // Toggle side menus setting
+    sideMenus = !sideMenus;
 }
 
 // End Navigation Functions
